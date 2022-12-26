@@ -13,19 +13,22 @@ public class Loader {
     
     public static List<String> loadScript(){
         List<String> scriptList = new ArrayList<>();
-        System.out.println("You must specify the path to the file containing the script.");
+        System.out.println("Укажите файл (путь к файлу), содержащий срипт.");
         try{     
             String pathname = new Scanner(System.in, "cp1251").nextLine();
+            System.out.println("------------------Script-------------------");
             try (Scanner scanScript = new Scanner(new File(pathname))) {
                 while(scanScript.hasNextLine()){
                     String currentRow = scanScript.nextLine();
+                    System.out.println(currentRow);
                     if(!currentRow.trim().startsWith("#") && !currentRow.trim().isEmpty())
                         scriptList.add(currentRow); }
+                System.out.println("------------------End of Script-------------------");
                 }
             } 
        catch (IOException ex) {
-             System.out.println("An error occurred while loading the data. "
-                     + "The application will be stopped."); 
+             System.out.println("Произошла ошибка при загрузке данных. "
+                     + "Приложение будет остановлено."); 
              System.exit(0);}
         return scriptList;
     }

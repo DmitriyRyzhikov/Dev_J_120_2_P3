@@ -1,9 +1,15 @@
   # Printing "Hello, world!!!" phrase
 print "Hello, world!!!"
 # Printing "21+121-42 = 100"
-set $n1 = 21
-set $n2 = 121
-set $n3 = 100
-set $sum = $n1 + $n2 - 42 + 54 - $n3
+set $n1 = 2
+set $n2 = 13
+set $n3 = -5
+set $n4 = 20
+input "Введите какое-нибудь число:", $number
+set $sum = ( $n1 / 2 ^ 3 - ( $n2 * $n1 - 5 + 2 - ( $n3 + $number * 5 / 2 ) ) ^ $n1 ) / $n4
+set $sum1 = ( 5 + 2 ) * -3 ^ 2
+set $sum3 = ( $sum + $sum1 ) / ( $sum - $sum1 )
 
-print "$sum = ", $n1, "+", $n2, "-42+54", "-", $n3, "=", $sum
+print "sum = ", "(", $n1, "/2^3", "-", "(", $n2, "*", $n1, "-5", "+2", "-", "(", $n3, "+", $number, "*5/2", ")", ")", "^", $n1, ")", "/", $n4, "=", $sum
+print "sum1 = ", "(5+2)*(-3)^2=", $sum1
+print "sum3 = ", "(", $sum, "+", $sum1, ")/(", $sum, "-", $sum1, ") = ", $sum3
